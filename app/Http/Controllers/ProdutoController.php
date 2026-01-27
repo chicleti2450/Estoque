@@ -58,13 +58,13 @@ class ProdutoController extends Controller
     public function delete($id){
         $produto= Produto::find($id);
 
-        if ($produto){
-            return response()->json ('Produto não encontrado');
+        if (!$produto){
+            return response()->json (['Message'=> 'Produto não encontrado']);
         }
 
-        $produto-> delete;
+        $produto-> delete($id);
 
-        return response()-> json ('Poduto deletado com sucesso');
+        return response()-> json (['Message'=> 'Produto deletado com sucesso']);
     }
 
     public function show($id){

@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('saidas', function (Blueprint $table) {
             $table->id();
+            $table->integer('id_clientes');
+            $table->integer('id_produtos');
+            $table->integer('quantidade');
             $table->timestamps();
         });
     }
